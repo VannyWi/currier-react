@@ -81,7 +81,7 @@ function RastreoPage() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm font-bold text-slate-500">Codigo</p>
-                <h2 className="text-2xl font-bold text-slate-950">{paquete.codigoRastreo || paquete.id}</h2>
+                <h2 className="break-all text-2xl font-bold text-slate-950">{paquete.codigoRastreo || paquete.id}</h2>
               </div>
               <StatusBadge status={paquete.estado} />
             </div>

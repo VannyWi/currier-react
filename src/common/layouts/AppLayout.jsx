@@ -16,7 +16,7 @@ function AppLayout() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900">
-      <div className="grid min-h-screen w-full gap-4 px-4 py-4 md:px-6 lg:grid-cols-[260px_1fr]">
+      <div className="grid min-h-screen w-full gap-3 px-3 py-3 md:gap-4 md:px-6 md:py-4 lg:grid-cols-[260px_1fr]">
         <aside className="flex flex-col rounded-xl border border-slate-800 bg-slate-900 p-4 text-white shadow-sm lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)]">
           <div>
             <div className="flex items-center justify-between gap-4 lg:block">
@@ -40,7 +40,7 @@ function AppLayout() {
           </div>
         </aside>
 
-        <main className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm md:p-6">
+        <main className="min-w-0 rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4 md:p-6">
           <Outlet />
         </main>
       </div>

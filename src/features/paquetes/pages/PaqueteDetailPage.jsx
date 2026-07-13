@@ -39,9 +39,9 @@ function DetailCard({ title, rows }) {
       <h2 className="text-lg font-bold text-slate-950">{title}</h2>
       <dl className="mt-4 grid gap-3 text-sm">
         {rows.map((row) => (
-          <div key={row.label} className="flex justify-between gap-4 rounded-lg bg-slate-50 px-4 py-3">
+          <div key={row.label} className="flex min-w-0 flex-col gap-1 rounded-lg bg-slate-50 px-4 py-3 sm:flex-row sm:justify-between sm:gap-4">
             <dt className="font-bold text-slate-500">{row.label}</dt>
-            <dd className="text-right font-semibold text-slate-900">{row.value || '-'}</dd>
+            <dd className="break-words font-semibold text-slate-900 sm:text-right">{row.value || '-'}</dd>
           </div>
         ))}
       </dl>
@@ -150,16 +150,16 @@ function PaqueteDetailPage() {
       <ErrorMessage message={error} />
       {paquete ? (
         <div className="grid gap-5 xl:grid-cols-[1fr_0.8fr]">
-          <div className="grid gap-5">
-            <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="grid min-w-0 gap-5">
+            <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div><p className="text-sm font-bold text-slate-500">Estado</p><StatusBadge status={paquete.estado} /></div>
-                <p className="text-2xl font-bold text-slate-950">S/ {paquete.tarifa ?? '-'}</p>
+                <p className="text-xl font-bold text-slate-950 sm:text-2xl">S/ {paquete.tarifa ?? '-'}</p>
               </div>
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-lg bg-slate-50 p-4"><p className="text-sm font-bold text-slate-500">Peso</p><strong>{paquete.pesoKg} kg</strong></div>
                 <div className="rounded-lg bg-slate-50 p-4"><p className="text-sm font-bold text-slate-500">Valor</p><strong>S/ {paquete.valorDeclarado}</strong></div>
-                <div className="rounded-lg bg-slate-50 p-4"><p className="text-sm font-bold text-slate-500">Ruta</p><strong>{paquete.sucursalOrigen} - {paquete.sucursalDestino}</strong></div>
+                <div className="rounded-lg bg-slate-50 p-4"><p className="text-sm font-bold text-slate-500">Ruta</p><strong className="break-words">{paquete.sucursalOrigen} - {paquete.sucursalDestino}</strong></div>
               </div>
             </section>
             <div className="grid gap-5 md:grid-cols-2">
